@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE HAUS | Icon Design Homes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           1. CSS VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-color: #1C1C1C; /* Luxury Black */
+            --secondary-color: #C9A66B; /* Champagne Gold */
+            --accent-concrete: #8C8C8C; /* Architectural Grey */
+            --bg-light: #F9F9F9;
+            --bg-white: #FFFFFF;
+            --text-main: #333333;
+            --text-muted: #666666;
+            
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            --container-width: 1200px;
+            --section-padding: 120px 0;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-white);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 25px;
+            color: var(--text-muted);
+            font-weight: 300;
+            font-size: 1.05rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* =========================================
+           2. UTILITIES
+           ========================================= */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        .text-center { text-align: center; }
+
+        .section-subtitle {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--primary-color);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--bg-white);
+            color: var(--bg-white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-white);
+            color: var(--primary-color);
+        }
+
+        /* =========================================
+           3. HEADER
+           ========================================= */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-body);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-weight: 300;
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        nav a {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* =========================================
+           4. HERO SECTION
+           ========================================= */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(28, 28, 28, 0.4), rgba(28, 28, 28, 0.4)), url('https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--bg-white);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            color: var(--bg-white);
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            color: #f0f0f0;
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* =========================================
+           5. ABOUT US
+           ========================================= */
+        .about {
+            padding: var(--section-padding);
+            background-color: var(--bg-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+        }
+
+        .about-text p {
+            text-align: justify;
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-family: var(--font-head);
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            box-shadow: 30px 30px 0 var(--bg-light);
+        }
+
+        /* =========================================
+           6. SERVICES
+           ========================================= */
+        .services {
+            padding: var(--section-padding);
+            background-color: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            padding: 50px 40px;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--secondary-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-num {
+            font-size: 3rem;
+            color: rgba(201, 166, 107, 0.2);
+            font-family: var(--font-head);
+            font-weight: 700;
+            margin-bottom: -20px;
+            position: relative;
+            z-index: 0;
+        }
+
+        .service-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================================
+           7. ADVANTAGES
+           ========================================= */
+        .advantages {
+            padding: var(--section-padding);
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+        }
+
+        .advantages .section-subtitle {
+            color: var(--secondary-color);
+        }
+
+        .advantages h2 {
+            color: var(--bg-white);
+        }
+
+        .advantages p {
+            color: #b0b0b0;
+        }
+
+        .adv-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .adv-column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .adv-item {
+            margin-bottom: 40px;
+            padding-left: 25px;
+            border-left: 1px solid var(--secondary-color);
+        }
+
+        .adv-item h4 {
+            color: var(--bg-white);
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        /* =========================================
+           8. PROCESS
+           ========================================= */
+        .process {
+            padding: var(--section-padding);
+            background-color: var(--bg-white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 70px;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            border: 1px solid var(--accent-concrete);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px auto;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .step:hover .step-icon {
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+            border-color: var(--primary-color);
+        }
+
+        .step h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* =========================================
+           9. CONTACT
+           ========================================= */
+        .contact {
+            padding: var(--section-padding);
+            background-color: var(--bg-light);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--bg-white);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        }
+
+        .contact-info {
+            padding: 80px 60px;
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+        }
+
+        .contact-info h3 {
+            color: var(--bg-white);
+            margin-bottom: 40px;
+        }
+
+        .info-item {
+            margin-bottom: 40px;
+        }
+
+        .info-item h5 {
+            color: var(--secondary-color);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .info-item p {
+            color: #ddd;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .contact-form {
+            padding: 80px 60px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 15px 0;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            background: transparent;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus {
+            border-bottom-color: var(--secondary-color);
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* =========================================
+           10. FOOTER
+           ========================================= */
+        footer {
+            background-color: #111;
+            color: #666;
+            padding: 60px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 3rem; }
+            .about-grid, .contact-container { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr; }
+            .nav-wrapper { flex-direction: column; gap: 20px; }
+            .contact-info { padding: 40px; }
+            .contact-form { padding: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">ONE <span>HAUS</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">The Concept</a></li>
+                    <li><a href="#services">Architecture</a></li>
+                    <li><a href="#advantages">Excellence</a></li>
+                    <li><a href="#process">Method</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Contemporary Living <br> Redefined on the Coast</h1>
+            <p>One Haus brings architectural precision and structural innovation to Balneário Camboriú. We design and build spaces that merge modern aesthetics with the fluidity of coastal life.</p>
+            <a href="#contact" class="btn">Discover Our Vision</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container about-grid">
+            <div class="about-text">
+                <span class="section-subtitle">Our Philosophy</span>
+                <h2 class="section-title">The Icon of Modernity</h2>
+                <p>ICON DESIGN HOMES LTDA, operating as ONE HAUS CASAS CONTEMPORANEAS, represents the new era of civil construction in Santa Catarina. Led by Maria Eugenia Simas Zucki, our firm merges the technical rigor of non-residential engineering with the refined aesthetics of luxury living.</p>
+                <p>Located in Balneário Camboriú, a city known for its towering skyline and demanding standards, we specialize in delivering high-performance buildings. Whether it is a bespoke contemporary residence or a complex commercial structure, our approach remains constant: form must serve function, and construction must endure.</p>
+                <p>We are not just builders; we are curators of space. We understand that in the high-end market, every detail counts—from the structural foundation to the final play of light in a living room. One Haus is where engineering meets art.</p>
+                <div class="signature">Maria Eugenia Simas Zucki</div>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Contemporary Architecture Detail">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">What We Create</span>
+                <h2 class="section-title">Integrated Solutions</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-num">01</div>
+                    <div class="service-content">
+                        <h3>Contemporary Architecture</h3>
+                        <p>We provide full-scale architectural design services. Our focus is on modern, minimalist lines that maximize natural light and ventilation, perfectly adapted to the climate of Balneário Camboriú.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-num">02</div>
+                    <div class="service-content">
+                        <h3>Construction Management</h3>
+                        <p>We execute complex non-residential and residential projects with military precision. We manage the entire supply chain, ensuring that materials, timelines, and budgets align with the highest industry standards.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-num">03</div>
+                    <div class="service-content">
+                        <h3>Structural Engineering</h3>
+                        <p>Beauty requires a strong backbone. Our engineering division handles structural calculations, foundation planning, and systems integration, ensuring your building is as safe as it is stunning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages" class="advantages">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Why One Haus</span>
+                <h2 class="section-title">The Design Difference</h2>
+            </div>
+
+            <div class="adv-wrapper">
+                <div class="adv-column">
+                    <div class="adv-item">
+                        <h4>Coastal Expertise</h4>
+                        <p>Building by the sea requires specific knowledge of materials and weathering. We utilize technologies that resist salinity and humidity, ensuring the longevity of your investment in Santa Catarina.</p>
+                    </div>
+                    <div class="adv-item">
+                        <h4>Turnkey Execution</h4>
+                        <p>From the initial sketch to the handover of keys, we handle everything. Our clients enjoy a stress-free process, dealing with a single point of accountability for design and build.</p>
+                    </div>
+                </div>
+                <div class="adv-column">
+                    <div class="adv-item">
+                        <h4>Sustainable Luxury</h4>
+                        <p>We integrate eco-friendly practices, such as energy-efficient glazing and rainwater harvesting, proving that luxury and responsibility can coexist in modern construction.</p>
+                    </div>
+                    <div class="adv-item">
+                        <h4>Principal Involvement</h4>
+                        <p>Maria Eugenia Simas Zucki oversees project milestones personally. We limit our project volume to ensure every client receives the boutique attention they deserve.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Our Methodology</span>
+                <h2 class="section-title">From Vision to Reality</h2>
+            </div>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-icon">&#9998;</div>
+                    <h4>Concept & Feasibility</h4>
+                    <p>We analyze the terrain and client needs to develop a conceptual design that is aesthetically pleasing and legally viable according to local zoning.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">&#9874;</div>
+                    <h4>Technical Execution</h4>
+                    <p>We produce detailed executive blueprints and mobilize our construction teams. This phase focuses on structural fidelity and material quality.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">&#127969;</div>
+                    <h4>Detailing & Handover</h4>
+                    <p>The final phase involves rigorous finishing work, systems testing, and interior integration, delivering a property ready for immediate occupation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Start the Conversation</h3>
+                    <p>Ready to build your legacy in Balneário Camboriú? Contact the One Haus team today.</p>
+                    
+                    <div class="info-item" style="margin-top: 40px;">
+                        <h5>Headquarters</h5>
+                        <p>BALNEARIO CAMBORIU, SANTA CATARINA<br>Brazil</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h5>Electronic Mail</h5>
+                        <p>info@icondesignhomes.info</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h5>Principal</h5>
+                        <p>Maria Eugenia Simas Zucki</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="email@domain.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Interest</label>
+                            <select>
+                                <option>Residential Construction</option>
+                                <option>Commercial Project</option>
+                                <option>Architectural Design</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Project Details</label>
+                            <textarea placeholder="Tell us about your vision..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ICON DESIGN HOMES LTDA. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">DBA: ONE HAUS CASAS CONTEMPORANEAS</p>
+        </div>
+    </footer>
+
+</body>
+</html>
